@@ -2,6 +2,7 @@ package com.map;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -10,8 +11,16 @@ public class Answer {
 	@Id
 	private Integer aid;
 	private String answer;
-	@OneToOne
+	
+	
+	//foreign key concept
+	//@OneToOne(mappedBy="answer")
+	
+	
+	@ManyToOne
 	private Question question;
+	
+	
 	public Answer() {
 		super();
 		// TODO Auto-generated constructor stub
